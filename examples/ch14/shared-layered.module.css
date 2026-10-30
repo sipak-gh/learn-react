@@ -1,0 +1,11 @@
+/* The same shared button, inside a cascade layer. Any unlayered rule beats it,
+   whatever the specificity or the order the files load in. */
+@layer shared {
+  .primary {
+    padding: 0.5rem 1rem;
+    color: white;
+    background: #1d5fd1;
+    border: 2px solid transparent;
+    border-radius: 0.375rem;
+  }
+}

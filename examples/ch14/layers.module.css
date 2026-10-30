@@ -1,0 +1,6 @@
+/* This component's own tweak: a quiet, outlined version of the shared button. */
+.quiet {
+  color: #1d5fd1;
+  background: transparent;
+  border: 2px solid currentColor;
+}

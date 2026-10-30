@@ -1,0 +1,16 @@
+import type { ReactNode } from 'react'
+
+interface PanelProps {
+  title: string
+  /** Whatever JSX is nested between <Panel> and </Panel>. */
+  children: ReactNode
+}
+
+export function Panel({ title, children }: PanelProps) {
+  return (
+    <section className="panel">
+      <h2>{title}</h2>
+      {children}
+    </section>
+  )
+}

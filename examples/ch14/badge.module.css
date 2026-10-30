@@ -1,0 +1,20 @@
+/* Class names here are local to this file: Vite renames them so they can't clash. */
+.badge {
+  display: inline-block;
+  padding: 0.125rem 0.5rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 0.875rem;
+}
+
+/* composes: an element with .warning also gets every .badge rule. */
+.warning {
+  composes: badge;
+  color: #8a4b00;
+  background: #fff4e0;
+}
+
+/* A second, independent class to combine with either of the above. */
+.large {
+  font-size: 1.25rem;
+}

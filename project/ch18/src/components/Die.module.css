@@ -1,0 +1,47 @@
+.die {
+  width: 4rem;
+  aspect-ratio: 1; /* height follows width: always square */
+  padding: 0.5rem;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr); /* 3 rows / 3 columns */
+  background: var(--color-surface);
+  border: 2px solid var(--color-text);
+  border-radius: 0.75rem;
+  /* Animate these properties whenever they change, e.g. when a die is held. */
+  transition:
+    transform 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out;
+}
+
+.die:not(:disabled) {
+  cursor: pointer;
+}
+
+.die:disabled {
+  opacity: 0.6;
+}
+
+/* Class composition: .held gets every rule of .die, plus its own.
+   So styles.held is two class names: "<die class> <held class>". */
+.held {
+  composes: die;
+  border-color: var(--color-accent);
+  background: var(--color-held);
+  transform: translateY(-0.375rem);
+}
+
+.pip {
+  width: 70%;
+  aspect-ratio: 1;
+  place-self: center;
+  border-radius: 50%;
+  background: var(--color-text);
+}
+
+@media (max-width: 40rem) {
+  .die {
+    width: 3.25rem;
+    padding: 0.375rem;
+  }
+}

@@ -1,0 +1,27 @@
+.leaderboard {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Not on the server yet. */
+.saving {
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+/* Old data, shown while newer data loads. */
+.stale {
+  opacity: 0.6;
+  transition: opacity 150ms ease-out;
+}
+
+.error {
+  color: var(--color-error);
+}

@@ -1,0 +1,22 @@
+.area {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.tray {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding-top: var(--space-2); /* room for held dice, which move up */
+}
+
+.rollRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* Used together with the shared buttons.primary class (see DiceTray.tsx). */
+.roll {
+  min-width: 6rem;
+}

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dice roller (no React)</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="roller">
+      <h1>Dice roller</h1>
+      <div class="dice" id="dice"></div>
+      <p id="status">Roll to start.</p>
+      <div class="actions">
+        <button type="button" id="roll">Roll</button>
+        <button type="button" id="new-turn">New turn</button>
+      </div>
+    </main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

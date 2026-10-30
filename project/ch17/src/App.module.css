@@ -1,0 +1,37 @@
+.app {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: var(--space-4);
+  display: grid;
+  gap: var(--space-4);
+}
+
+.header {
+  display: flex; /* flexbox: lay children out in a row */
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* Push everything after the title to the right. */
+.header h1 {
+  margin-right: auto;
+}
+
+.setup {
+  max-width: 32rem;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.footer {
+  color: var(--color-muted);
+  font-size: 0.875rem;
+}
+
+/* On small screens, use less padding around the page. */
+@media (max-width: 40rem) {
+  .app {
+    padding: var(--space-3);
+  }
+}

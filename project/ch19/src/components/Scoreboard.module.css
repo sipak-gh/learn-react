@@ -1,0 +1,18 @@
+.list {
+  display: grid;
+  gap: var(--space-1);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.list li {
+  display: grid;
+  grid-template-columns: 2rem 1fr auto;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius);
+}
+
+.list [aria-current='true'] {
+  background: var(--color-highlight);
+}

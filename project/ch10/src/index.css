@@ -1,0 +1,268 @@
+/* ---------- 1. A small reset: make every browser start from the same place ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* width includes padding and border */
+}
+
+body,
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit; /* form controls don't inherit fonts by default */
+}
+
+/* ---------- 2. Design tokens: CSS custom properties (variables) ---------- */
+:root {
+  --color-bg: #f4f1ea;
+  --color-surface: #ffffff;
+  --color-text: #1d2127;
+  --color-muted: #5b6470;
+  --color-border: #cfd5dc;
+  --color-accent: #1d5fd1;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --radius: 0.5rem;
+
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+/* ---------- 3. Page layout ---------- */
+.app {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: var(--space-4);
+  display: grid;
+  gap: var(--space-4);
+}
+
+.app-header {
+  display: flex; /* flexbox: lay children out in a row */
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.board {
+  display: grid; /* grid: two equal columns */
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  align-items: start;
+}
+
+.panel {
+  padding: var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.panel h2 {
+  margin-bottom: var(--space-2);
+  font-size: 1.25rem;
+}
+
+.app-footer {
+  color: var(--color-muted);
+  font-size: 0.875rem;
+}
+
+/* ---------- 4. Dice ---------- */
+.dice-tray {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.dice-area {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.die {
+  width: 4rem;
+  aspect-ratio: 1; /* height follows width: always square */
+  padding: 0.5rem;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr); /* 3 rows / 3 columns */
+  background: var(--color-surface);
+  border: 2px solid var(--color-text);
+  border-radius: 0.75rem;
+}
+
+.die:not(:disabled) {
+  cursor: pointer;
+}
+
+.die:disabled {
+  opacity: 0.6;
+}
+
+.die--held {
+  border-color: var(--color-accent);
+  background: #dce8fb;
+}
+
+.roll-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.roll-button {
+  padding: var(--space-2) var(--space-4);
+  color: #fff;
+  background: var(--color-accent);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.roll-button:disabled {
+  background: var(--color-muted);
+  cursor: not-allowed;
+}
+
+.pip {
+  width: 70%;
+  aspect-ratio: 1;
+  place-self: center;
+  border-radius: 50%;
+  background: var(--color-text);
+}
+
+/* ---------- 5. Scorecard ---------- */
+.scorecard {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.scorecard th,
+.scorecard td {
+  padding: var(--space-1) var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.scorecard .score {
+  width: 5rem;
+  text-align: right;
+}
+
+.scorecard .subtotal,
+.scorecard .total {
+  font-weight: 600;
+}
+
+.score-button {
+  min-width: 3rem;
+  padding: 0 var(--space-2);
+  color: var(--color-accent);
+  background: transparent;
+  border: 1px dashed var(--color-accent);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.score-button:hover {
+  color: #fff;
+  background: var(--color-accent);
+}
+
+/* ---------- 6. Game over ---------- */
+.game-over {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-2);
+}
+
+/* ---------- 7. New game form ---------- */
+.setup {
+  max-width: 32rem;
+}
+
+.new-game-form {
+  display: grid;
+  gap: var(--space-3);
+  justify-items: start;
+}
+
+.new-game-form fieldset {
+  display: grid;
+  gap: var(--space-2);
+  justify-items: start;
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.player-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.player-row label {
+  min-width: 5rem;
+}
+
+.new-game-form input:not([type='checkbox']) {
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.form-error {
+  color: #b42318;
+}
+
+/* ---------- 8. Multiplayer ---------- */
+.stack {
+  display: grid;
+  align-content: start;
+  gap: var(--space-4);
+}
+
+.scorecard .current {
+  background: #eef3fc;
+}
+
+.scorecard th.current {
+  color: var(--color-accent);
+}
+
+.scoreboard {
+  display: grid;
+  gap: var(--space-1);
+  padding: 0;
+  list-style: none;
+}
+
+.scoreboard li {
+  display: grid;
+  grid-template-columns: 2rem 1fr auto;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius);
+}
+
+.scoreboard li.current {
+  background: #eef3fc;
+}

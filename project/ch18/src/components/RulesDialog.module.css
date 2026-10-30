@@ -1,0 +1,9 @@
+.section {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.section h3 {
+  margin: 0;
+  font-size: 1rem;
+}

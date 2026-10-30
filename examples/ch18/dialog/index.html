@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The dialog element</title>
+    <style>
+      body {
+        margin: 2rem;
+        font-family: system-ui, sans-serif;
+      }
+      dialog {
+        border: none;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+      }
+      /* The layer between a modal dialog and the page. */
+      dialog::backdrop {
+        background: rgb(0 0 0 / 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>The &lt;dialog&gt; element</h1>
+    <button type="button" id="open-modal">showModal()</button>
+    <button type="button" id="open">show()</button>
+    <p><a href="#">A link on the page</a></p>
+
+    <dialog id="confirm" aria-labelledby="confirm-title">
+      <h2 id="confirm-title">Delete the saved game?</h2>
+      <!-- method="dialog": submitting closes the dialog instead of sending a request. -->
+      <form method="dialog">
+        <button value="cancel">Cancel</button>
+        <button value="delete">Delete</button>
+      </form>
+    </dialog>
+
+    <pre id="log"></pre>
+
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

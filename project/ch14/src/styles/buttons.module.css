@@ -1,0 +1,41 @@
+/* Shared button styles. Components import this file and combine its classes
+   with their own, e.g. className={`${buttons.primary} ${styles.roll}`}. */
+.primary {
+  padding: var(--space-2) var(--space-4);
+  color: var(--color-on-accent);
+  background: var(--color-accent);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: filter 150ms ease-out;
+}
+
+.primary:hover:not(:disabled) {
+  filter: brightness(1.1);
+}
+
+.primary:disabled {
+  background: var(--color-muted);
+  cursor: not-allowed;
+}
+
+/* Less prominent actions: "New game", "Add player", "Remove". */
+.secondary {
+  padding: var(--space-1) var(--space-3);
+  color: var(--color-accent);
+  background: var(--color-surface);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color 150ms ease-out;
+}
+
+.secondary:hover:not(:disabled) {
+  background: var(--color-highlight);
+}
+
+.secondary:disabled {
+  color: var(--color-muted);
+  border-color: var(--color-border);
+  cursor: not-allowed;
+}

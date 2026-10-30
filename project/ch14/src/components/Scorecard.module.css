@@ -1,0 +1,30 @@
+.subtotal,
+.total {
+  font-weight: 600;
+}
+
+.current {
+  background: var(--color-highlight);
+}
+
+th.current {
+  color: var(--color-accent);
+}
+
+.scoreButton {
+  min-width: 3rem;
+  padding: 0 var(--space-2);
+  color: var(--color-accent);
+  background: transparent;
+  border: 1px dashed var(--color-accent);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition:
+    color 150ms ease-out,
+    background-color 150ms ease-out;
+}
+
+.scoreButton:hover {
+  color: var(--color-on-accent);
+  background: var(--color-accent);
+}

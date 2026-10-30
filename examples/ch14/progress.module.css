@@ -1,0 +1,14 @@
+.track {
+  width: 20rem;
+  height: 1.5rem;
+  background: #ddd;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  /* --hue is set per element from React; 120 is the fallback if it's missing. */
+  background: hsl(var(--hue, 120) 70% 45%);
+  transition: width 300ms ease-out;
+}

@@ -1,0 +1,41 @@
+body {
+  margin: 2rem;
+  font-family: system-ui, sans-serif;
+}
+
+.roller {
+  display: grid;
+  gap: 1rem;
+  justify-items: start;
+}
+
+.dice {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.die {
+  width: 4rem;
+  height: 4rem;
+  font-size: 3rem;
+  line-height: 1;
+  border: 2px solid #1d2127;
+  border-radius: 0.5rem;
+  background: white;
+  cursor: pointer;
+}
+
+.die:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.die.held {
+  background: #ffe8a3;
+  border-color: #b07d00;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}

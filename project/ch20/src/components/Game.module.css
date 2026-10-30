@@ -1,0 +1,19 @@
+.board {
+  display: grid; /* grid: two equal columns */
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  align-items: start;
+}
+
+/* Narrow screens (phones, split windows): a single column. */
+@media (max-width: 48rem) {
+  .board {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stack {
+  display: grid;
+  align-content: start;
+  gap: var(--space-4);
+}
